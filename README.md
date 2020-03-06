@@ -1,5 +1,4 @@
 # SignUp-Login-Panel
-MageBit Web Developer Task
 Setup:
 1. Import database SQL dump provided having the database name magebitdata.
 2. The task is completed as per the instructions provided by the MageBit Task.

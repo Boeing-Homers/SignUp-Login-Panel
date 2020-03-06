@@ -1,0 +1,226 @@
+/* BACKGROUND ZOOM IN */
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: "Source Sans Pro";
+}
+.banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+.banner::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+}
+.banner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    -moz-transform: translateZ(0) scale(1.0, 1.0);
+    -ms-transform: translateZ(0) scale(1.0, 1.0);
+    -o-transform: translateZ(0) scale(1.0, 1.0);
+    background-image: url("img/bg.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: increase 7s linear 10ms forwards;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    z-index: -2;
+}
+@keyframes increase {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }s
+}
+/* MAIN GRID */
+.wrapper {
+    display: grid;
+    grid-template-columns:  2fr 2fr 8fr  12fr 2fr 2fr;
+    grid-template-rows: 1.4fr .3fr .5fr 4fr .5fr .3fr 1.5fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+/* DARK BLUE SECTION  */
+.blue-wraper {  
+    grid-column: 2/5;
+    grid-row: 3/6;
+    background-color: rgba(15, 26, 47, 0.9);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.sign-up-text {   /* DARK BLUE - LEFT SIDE - TEXT AREA/
+    padding: 7% 9%;
+    font-family: "Source Sans Pro";
+  }
+  .sign-in-text {  /* DARK BLUE - RIGHT SIDE - TEXT AREA*/
+   padding: 7% 9%;
+   
+}
+.blue-line { /* Blue horizontal line*/
+  margin: 0.25em 0;
+  border: #49abfe 0.5px solid;
+  width: 20%;
+}
+.heading { /* heading*/
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+p { /*paragraph text*/
+  font-size: 15px;
+  line-height: 1.85;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.white{
+  color: #ffffff;
+}
+.small
+{
+    margin-top: 15%;
+    
+}
+.input {
+  border: none;
+  width: 40%;
+  background: none;
+  display: inline-block;
+  border-width:0.5%;
+  font-family: "Source Sans Pro";
+  color: white;
+}
+.input:focus {
+  outline: none;
+}
+
+.input {
+  border-bottom: 1px #cbd2df solid;
+  padding: 6px 0;
+  padding-bottom:10px;
+}
+.message {
+  background-color: #4BB543;
+  text-align: center;
+  padding: 0.5em 5%;
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* LOG-OUT BUTTON */
+.orange-login-button {
+  display: inline-block;
+}
+ .button {
+  border-radius: 35px;
+  padding: 3% 5%;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+.button:focus {
+  outline: none; 
+}
+.button-blue {
+  -webkit-box-shadow: inset 0px 0px 0px 2px #49abfe;
+  -moz-box-shadow: inset 0px 0px 0px 2px #49abfe;
+  box-shadow: inset 0px 0px 0px 2px #49abfe;
+  background: transparent; }
+.button-blue:hover {
+  background: #49abfe;
+  box-shadow: none; }
+.button-orange {
+  background: #f89a35; }
+.button-orange:hover {
+  background: #f8bf35; }
+@-webkit-keyframes zoomin
+{
+  0% {transform: scale(1);}
+  100% {transform: scale(1.2);}
+}
+
+.btn
+{
+	display:block;
+	padding:5px 15px;
+	font-weight:lighter;
+	text-decoration:none;
+	border-radius:20px;
+  display: inline-block;
+  margin-left: 10px;
+}
+.btn:focus
+{
+  outline: none; 
+}
+.btn-full
+{
+	background-color:transparent;
+	color:white;
+	border: 1px solid #49abfe;
+}
+.btn-full:hover
+{
+	background:white;
+}
+
+.logout
+{
+float: right;       
+}
+.submit
+{
+    
+margin-left: 18%;
+ 
+    
+}
+/* MOBILE RESPONSIVE  */
+@media only screen and (max-width: 590px) {
+    .wrapper {
+         grid-template-columns: repeat(2, 1fr);
+    }
+    .blue-wraper {
+        grid-column: 1/12;
+    }
+    .sign-up-text {
+      padding: 3% 4%;
+    }
+}
+@media (min-width: 590px) and (max-width: 915px){
+.sign-up-text {
+  padding: 4% 7%;
+}
+}
